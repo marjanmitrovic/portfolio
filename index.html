@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="sr">
 <head>
-<meta name="google-site-verification" content="KlIHtmHxwd3oFi7c9DoyrRiXdGcNx79pjhzeGqL4CgQ" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Marjan Mitrović | Aplikacije, AI alati i digitalni projekti</title>
   <meta name="description" content="Portfolio Marjana Mitrovića: WriterOS, RailGuard, DreamLog, LoneWorker i budući AI alati za autore, bezbednost i firme." />
   <meta name="keywords" content="Marjan Mitrović, WriterOS, RailGuard, DreamLog, LoneWorker, AI alati, aplikacije, portfolio, SaaS, GitHub Pages" />
@@ -11,35 +11,43 @@
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#0a0a0f" />
 
+  <link rel="canonical" href="https://marjanmitrovic.github.io/" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="sr_RS" />
   <meta property="og:title" content="Marjan Mitrović | Aplikacije, AI alati i digitalni projekti" />
   <meta property="og:description" content="Jedno mesto za WriterOS, RailGuard, DreamLog, LoneWorker i buduće AI proizvode." />
-  <meta property="og:url" content="https://marjanmitrovic.github.io/portfolio-site" />
+  <meta property="og:url" content="https://marjanmitrovic.github.io/" />
   <meta property="og:site_name" content="Marjan Mitrović Portfolio" />
-  <meta property="og:image" content="https://marjanmitrovic.github.io/portfolio-site/images/og-cover.jpg" />
+  <meta property="og:image" content="https://marjanmitrovic.github.io/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Portfolio aplikacija i AI alata Marjana Mitrovića" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Marjan Mitrović | Aplikacije, AI alati i digitalni projekti" />
   <meta name="twitter:description" content="Portfolio aplikacija, knjiga i AI alata: WriterOS, RailGuard, DreamLog, LoneWorker i još projekata." />
-  <meta name="twitter:image" content="https://marjanmitrovic.github.io/portfolio-site/images/og-cover.jpg" />
+  <meta name="twitter:image" content="https://marjanmitrovic.github.io/images/og-cover.jpg" />
 
-  <link rel="canonical" href="https://marjanmitrovic.github.io/portfolio-site" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Marjan Mitrović",
-    "url": "https://marjanmitrovic.github.io/portfolio-site",
+    "url": "https://marjanmitrovic.github.io/",
     "email": "mailto:marjan.posao@gmail.com",
     "jobTitle": "Writer, app developer and AI product builder",
     "sameAs": [
-      "https://github.com/marjanmitrovic/portfolio-site"
+      "https://github.com/marjanmitrovic"
     ]
   }
   </script>
@@ -47,16 +55,21 @@
   <style>
     :root {
       --bg: #09090c;
-      --bg-soft: #12121a;
+      --bg-2: #0f1020;
       --card: rgba(255,255,255,0.05);
-      --card-strong: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.12);
+      --card-2: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.11);
       --text: #f5f7fb;
       --muted: #b0b7c3;
-      --muted-2: #8a91a1;
-      --accent: #ffffff;
-      --shadow: 0 24px 60px rgba(0,0,0,0.35);
-      --max: 1180px;
+      --muted-2: #8e95a3;
+      --white: #ffffff;
+      --shadow: 0 25px 60px rgba(0, 0, 0, 0.38);
+      --shadow-lg: 0 35px 100px rgba(0, 0, 0, 0.5);
+      --radius: 28px;
+      --max: 1240px;
+      --accent-1: #6ea8ff;
+      --accent-2: #9f7aea;
+      --accent-3: #ff8a5b;
     }
 
     * { box-sizing: border-box; }
@@ -64,32 +77,53 @@
     body {
       margin: 0;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 28%),
-        linear-gradient(180deg, #111119 0%, var(--bg) 35%, #08080b 100%);
       color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(110, 168, 255, 0.12), transparent 26%),
+        radial-gradient(circle at 90% 15%, rgba(159, 122, 234, 0.12), transparent 28%),
+        radial-gradient(circle at 50% 60%, rgba(255, 138, 91, 0.06), transparent 32%),
+        linear-gradient(180deg, #11121c 0%, var(--bg) 30%, #07070a 100%);
       line-height: 1.65;
+      overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     .container {
       width: min(var(--max), calc(100% - 32px));
       margin: 0 auto;
     }
 
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     .nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      backdrop-filter: blur(16px);
-      background: rgba(9,9,12,0.75);
+      backdrop-filter: blur(18px);
+      background: rgba(8, 8, 12, 0.72);
       border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
-      min-height: 76px;
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -108,11 +142,12 @@
       height: 46px;
       border-radius: 16px;
       border: 1px solid var(--border);
-      background: var(--card);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
       display: grid;
       place-items: center;
       font-weight: 800;
-      letter-spacing: 0.04em;
+      letter-spacing: 0.05em;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
 
     .brand small {
@@ -132,17 +167,19 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 24px;
     }
 
     .nav-links a {
       color: var(--muted);
       font-size: 0.95rem;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, opacity 0.2s ease;
     }
 
     .nav-links a:hover,
-    .nav-links a:focus-visible { color: var(--text); }
+    .nav-links a:focus-visible {
+      color: var(--white);
+    }
 
     .nav-actions {
       display: flex;
@@ -157,7 +194,7 @@
       border-radius: 14px;
       border: 1px solid var(--border);
       background: var(--card);
-      color: var(--text);
+      color: var(--white);
       font-size: 1.25rem;
       cursor: pointer;
     }
@@ -167,7 +204,9 @@
       padding: 0 0 16px;
     }
 
-    .mobile-menu.open { display: block; }
+    .mobile-menu.open {
+      display: block;
+    }
 
     .mobile-menu a {
       display: block;
@@ -181,34 +220,72 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 48px;
+      min-height: 50px;
       padding: 0 18px;
       border-radius: 18px;
       border: 1px solid var(--border);
-      font-weight: 600;
-      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      font-weight: 700;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
       cursor: pointer;
+      white-space: nowrap;
     }
 
     .btn:hover,
     .btn:focus-visible {
-      transform: translateY(-1px);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.25);
     }
 
     .btn-primary {
-      background: var(--accent);
+      background: var(--white);
       color: #09090c;
       border-color: transparent;
     }
 
     .btn-secondary {
-      background: transparent;
-      color: var(--text);
+      background: rgba(255,255,255,0.02);
+      color: var(--white);
     }
 
     .hero {
-      padding: 72px 0 56px;
+      position: relative;
+      padding: 78px 0 54px;
       border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto;
+      width: 520px;
+      height: 520px;
+      filter: blur(80px);
+      opacity: 0.16;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero::before {
+      top: -120px;
+      right: -120px;
+      background: radial-gradient(circle, var(--accent-2), transparent 62%);
+    }
+
+    .hero::after {
+      bottom: -180px;
+      left: -100px;
+      background: radial-gradient(circle, var(--accent-1), transparent 62%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      gap: 48px;
+      align-items: start;
     }
 
     .eyebrow {
@@ -217,66 +294,147 @@
       gap: 10px;
       padding: 10px 16px;
       border-radius: 999px;
-      background: var(--card);
+      background: rgba(255,255,255,0.04);
       border: 1px solid var(--border);
       color: var(--muted);
       font-size: 0.92rem;
+      box-shadow: 0 16px 35px rgba(0,0,0,0.2);
     }
 
-    h1, h2, h3 { line-height: 1.1; margin: 0; }
+    .eyebrow::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+      box-shadow: 0 0 18px rgba(110, 168, 255, 0.6);
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.07;
+      margin: 0;
+    }
 
     .hero h1 {
       margin-top: 22px;
-      font-size: clamp(2.4rem, 6vw, 4.9rem);
-      max-width: 920px;
-      letter-spacing: -0.03em;
+      font-size: clamp(2.7rem, 6vw, 5.6rem);
+      max-width: 820px;
+      letter-spacing: -0.045em;
+      text-wrap: balance;
     }
 
     .hero p {
-      max-width: 760px;
-      font-size: 1.12rem;
+      max-width: 710px;
+      font-size: 1.14rem;
       color: var(--muted);
-      margin: 22px 0 0;
+      margin: 20px 0 0;
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-top: 30px;
+      margin-top: 28px;
+    }
+
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .hero-cover-wrap {
+      width: 100%;
+      max-width: 540px;
+      padding-top: 8px;
+      perspective: 1200px;
+      animation: floatCard 6s ease-in-out infinite;
+    }
+
+    .hero-cover {
+      width: 100%;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow-lg);
+      transform: rotateY(-7deg) rotateX(4deg);
+      transform-origin: center center;
+      background: #111;
+    }
+
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .hero-mini-cards {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .mini-card {
+      padding: 14px 16px;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.09);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .mini-card span {
+      display: block;
+      color: var(--muted-2);
+      font-size: 0.88rem;
     }
 
     .stats {
-      margin-top: 36px;
+      margin-top: 34px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
-      max-width: 800px;
+      max-width: 820px;
     }
 
     .stat {
       padding: 18px;
-      background: var(--card);
+      background: rgba(255,255,255,0.05);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: 22px;
       box-shadow: var(--shadow);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.2);
+      background: rgba(255,255,255,0.07);
     }
 
     .stat strong {
       display: block;
-      font-size: 1.5rem;
+      font-size: 1.48rem;
       margin-bottom: 4px;
     }
 
-    .stat span { color: var(--muted-2); font-size: 0.95rem; }
+    .stat span {
+      color: var(--muted-2);
+      font-size: 0.95rem;
+    }
 
     .section {
-      padding: 72px 0;
+      padding: 82px 0;
     }
 
     .section-head {
-      max-width: 760px;
-      margin-bottom: 28px;
+      max-width: 780px;
+      margin-bottom: 30px;
     }
 
     .section-kicker {
@@ -288,8 +446,9 @@
     }
 
     .section-head h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2rem, 4vw, 3.2rem);
       margin-bottom: 14px;
+      letter-spacing: -0.03em;
     }
 
     .section-head p {
@@ -306,59 +465,106 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .card {
-      background: var(--card);
+    .app-card,
+    .value-card,
+    .panel,
+    .project {
+      position: relative;
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.035));
       border: 1px solid var(--border);
       border-radius: 28px;
-      padding: 24px;
       box-shadow: var(--shadow);
-      height: 100%;
+      overflow: hidden;
+    }
+
+    .app-card::before,
+    .value-card::before,
+    .panel::before,
+    .project::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(110,168,255,0.08), rgba(159,122,234,0.05) 40%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .app-card {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+    }
+
+    .app-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255,255,255,0.2);
+      box-shadow: 0 35px 80px rgba(0,0,0,0.42);
+      background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.04));
     }
 
     .icon {
-      width: 52px;
-      height: 52px;
+      width: 54px;
+      height: 54px;
       border-radius: 18px;
       display: grid;
       place-items: center;
-      background: var(--card-strong);
+      background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.08);
       font-size: 1.35rem;
       margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
     }
 
     .badge {
       display: inline-flex;
+      width: fit-content;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.08);
       color: var(--muted);
       font-size: 0.78rem;
       margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
     }
 
-    .card h3 {
-      font-size: 1.45rem;
+    .app-card h3,
+    .value-card h3,
+    .panel h3,
+    .project h3 {
+      position: relative;
+      z-index: 1;
+    }
+
+    .app-card h3 {
+      font-size: 1.5rem;
       margin-bottom: 12px;
     }
 
-    .card p {
+    .app-card p,
+    .value-card p,
+    .panel p,
+    .project-copy p {
       color: var(--muted);
-      margin: 0 0 18px;
+      position: relative;
+      z-index: 1;
     }
 
     .features {
       list-style: none;
       padding: 0;
       margin: 0 0 22px;
+      position: relative;
+      z-index: 1;
     }
 
     .features li {
       position: relative;
       padding-left: 24px;
       margin-bottom: 10px;
-      color: #dfe5ef;
+      color: #e3e9f3;
       font-size: 0.96rem;
     }
 
@@ -367,7 +573,8 @@
       position: absolute;
       left: 6px;
       top: -1px;
-      color: #ffffff;
+      color: #fff;
+      font-size: 1.05rem;
     }
 
     .btn-row {
@@ -375,16 +582,73 @@
       grid-template-columns: 1fr 1fr;
       gap: 12px;
       margin-top: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .showcase {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .showcase-card {
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      transition: transform 0.22s ease, background 0.22s ease, border-color 0.22s ease;
+    }
+
+    .showcase-card:hover {
+      transform: translateY(-6px);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.18);
+    }
+
+    .showcase-card .showcase-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      margin-bottom: 14px;
+      font-size: 1.25rem;
+    }
+
+    .showcase-card h4 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .showcase-card p {
+      margin: 0;
+      color: var(--muted-2);
+      font-size: 0.9rem;
     }
 
     .highlight {
-      background: rgba(255,255,255,0.03);
+      background: rgba(255,255,255,0.025);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
     }
 
     .value-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .value-card {
+      padding: 24px;
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,255,255,0.18);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.04));
     }
 
     .project-list {
@@ -397,16 +661,19 @@
       grid-template-columns: 0.95fr 1.05fr;
       gap: 20px;
       padding: 24px;
-      border-radius: 30px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
       scroll-margin-top: 100px;
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .project-copy p { color: var(--muted); margin: 14px 0 0; }
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.18);
+      box-shadow: 0 35px 80px rgba(0,0,0,0.38);
+    }
 
     .project-panel {
+      position: relative;
+      z-index: 1;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 24px;
@@ -429,14 +696,15 @@
     }
 
     .panel {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 30px;
       padding: 28px;
-      box-shadow: var(--shadow);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
     }
 
-    .panel p { color: var(--muted); }
+    .panel:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.18);
+      box-shadow: 0 35px 80px rgba(0,0,0,0.34);
+    }
 
     .contact-box {
       margin-top: 18px;
@@ -445,6 +713,8 @@
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
       word-break: break-word;
+      position: relative;
+      z-index: 1;
     }
 
     footer {
@@ -467,13 +737,30 @@
       gap: 16px;
     }
 
-    @media (max-width: 1080px) {
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    @media (max-width: 1140px) {
       .cards,
+      .showcase,
       .value-grid,
       .project,
       .about-grid,
       .contact-grid {
         grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-cover-wrap {
+        max-width: 620px;
       }
     }
 
@@ -482,24 +769,64 @@
       .nav-actions {
         display: none;
       }
-      .menu-btn { display: inline-grid; place-items: center; }
-      .stats { grid-template-columns: 1fr; }
-      .cards { grid-template-columns: 1fr; }
+
+      .menu-btn {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 56px;
+      }
+
+      .hero-cover {
+        transform: none;
+      }
+
+      .hero-mini-cards {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 560px) {
-      .hero { padding: 56px 0 42px; }
-      .section { padding: 56px 0; }
+      .container {
+        width: min(var(--max), calc(100% - 22px));
+      }
+
+      .hero,
+      .section {
+        padding: 56px 0;
+      }
+
       .btn-row,
-      .hero-actions {
+      .hero-actions,
+      .hero-mini-cards {
         grid-template-columns: 1fr;
       }
-      .btn-row { display: grid; }
-      .container { width: min(var(--max), calc(100% - 22px)); }
-      .card,
+
+      .btn-row {
+        display: grid;
+      }
+
+      .app-card,
+      .value-card,
       .panel,
       .project,
-      .project-panel { padding: 20px; }
+      .project-panel {
+        padding: 20px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.4rem, 12vw, 4rem);
+      }
     }
   </style>
 </head>
@@ -516,6 +843,7 @@
 
       <nav class="nav-links" aria-label="Glavna navigacija">
         <a href="#projekti">Projekti</a>
+        <a href="#showcase">Showcase</a>
         <a href="#detalji">Detalji</a>
         <a href="#o-meni">O meni</a>
         <a href="#kontakt">Kontakt</a>
@@ -528,8 +856,10 @@
 
       <button class="menu-btn" id="menuBtn" aria-label="Otvori meni" aria-expanded="false">☰</button>
     </div>
+
     <div class="container mobile-menu" id="mobileMenu">
       <a href="#projekti">Projekti</a>
+      <a href="#showcase">Showcase</a>
       <a href="#detalji">Detalji</a>
       <a href="#o-meni">O meni</a>
       <a href="#kontakt">Kontakt</a>
@@ -538,97 +868,65 @@
   </header>
 
   <main id="top">
-   <section class="hero">
-  <div class="container" style="
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:40px;
-    align-items:center;
-  ">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal is-visible">
+          <div class="eyebrow">Portfolio aplikacija, knjiga i budućih AI proizvoda</div>
 
-    <!-- LEVA STRANA -->
-    <div>
+          <h1>Gradim aplikacije i AI alate koji rešavaju konkretne probleme.</h1>
 
-      <div class="eyebrow">
-        Portfolio aplikacija, knjiga i budućih AI proizvoda
-      </div>
+          <p>
+            Jedno centralno mesto za moje projekte: WriterOS, RailGuard, DreamLog,
+            LoneWorker i narednu generaciju AI alata za autore i firme.
+          </p>
 
-      <h1>
-        Gradim aplikacije i AI alate koji rešavaju konkretne probleme.
-      </h1>
-
-      <p>
-        Jedno centralno mesto za moje projekte: WriterOS, RailGuard,
-        DreamLog, LoneWorker i narednu generaciju AI alata za autore i firme.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#projekti">
-          Pogledaj projekte
-        </a>
-
-        <a class="btn btn-secondary"
-           href="mailto:marjan.posao@gmail.com?subject=Poslovni%20upit">
-          Kontakt / saradnja
-        </a>
-      </div>
-
-      <div class="stats">
-        <div class="stat">
-          <strong>5+</strong>
-          <span>projekata u razvoju</span>
-        </div>
-
-        <div class="stat">
-          <strong>AI + Mobile</strong>
-          <span>spoj softvera i automatizacije</span>
-        </div>
-
-        <div class="stat">
-          <strong>SR / EN / CZ</strong>
-          <span>višejezični pristup</span>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- DESNA STRANA (OG COVER) -->
-    <div style="
-      display:flex;
-      align-items:center;
-      justify-content:center;
-    ">
-
-      <img
-        src="images/og-cover.jpg"
-        alt="Portfolio aplikacija i AI alata Marjana Mitrovića"
-        style="
-          width:100%;
-          max-width:520px;
-          border-radius:28px;
-          border:1px solid rgba(255,255,255,0.12);
-          box-shadow:0 40px 100px rgba(0,0,0,0.55);
-          transform:perspective(1000px) rotateY(-6deg) rotateX(3deg);
-        "
-      />
-
-    </div>
-
-  </div>
-</section>
-        <div class="stats">
-          <div class="stat">
-            <strong>5+</strong>
-            <span>projekata u razvoju</span>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projekti">Pogledaj projekte</a>
+            <a class="btn btn-secondary" href="mailto:marjan.posao@gmail.com?subject=Poslovni%20upit">Kontakt / saradnja</a>
           </div>
-          <div class="stat">
-            <strong>AI + Mobile</strong>
-            <span>spoj softvera i automatizacije</span>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>5+</strong>
+              <span>projekata u razvoju</span>
+            </div>
+            <div class="stat">
+              <strong>AI + Mobile</strong>
+              <span>spoj softvera i automatizacije</span>
+            </div>
+            <div class="stat">
+              <strong>SR / EN / CZ</strong>
+              <span>višejezični pristup</span>
+            </div>
           </div>
-          <div class="stat">
-            <strong>SR / EN / CZ</strong>
-            <span>višejezični pristup</span>
+        </div>
+
+        <div class="hero-visual reveal is-visible">
+          <div class="hero-cover-wrap">
+            <img
+              class="hero-cover"
+              src="images/og-cover.jpg"
+              alt="Portfolio aplikacija i AI alata Marjana Mitrovića"
+            />
+
+            <div class="hero-mini-cards">
+              <div class="mini-card">
+                <strong>WriterOS</strong>
+                <span>AI alat za autore i organizaciju romana</span>
+              </div>
+              <div class="mini-card">
+                <strong>RailGuard</strong>
+                <span>Bezbednost i GPS logika u realnom svetu</span>
+              </div>
+              <div class="mini-card">
+                <strong>DreamLog</strong>
+                <span>Praćenje snova i noćnih obrazaca</span>
+              </div>
+              <div class="mini-card">
+                <strong>LoneWorker</strong>
+                <span>Sigurnosni alat sa B2B potencijalom</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -636,14 +934,17 @@
 
     <section class="section" id="projekti">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <div class="section-kicker">Projekti</div>
           <h2>Pregled svih aplikacija</h2>
-          <p>Svaki proizvod je usmeren na jasan problem, sa prostorom za monetizaciju kroz pretplatu, licence, B2B saradnju ili digitalnu prodaju.</p>
+          <p>
+            Svaki proizvod je usmeren na jasan problem, sa prostorom za monetizaciju kroz
+            pretplatu, licence, B2B saradnju ili digitalnu prodaju.
+          </p>
         </div>
 
         <div class="grid cards">
-          <article class="card">
+          <article class="app-card reveal">
             <div class="icon">✍️</div>
             <div class="badge">U razvoju</div>
             <h3>WriterOS</h3>
@@ -659,7 +960,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="app-card reveal">
             <div class="icon">🚆</div>
             <div class="badge">Aktivan projekat</div>
             <h3>RailGuard</h3>
@@ -675,7 +976,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="app-card reveal">
             <div class="icon">🌙</div>
             <div class="badge">Prototip</div>
             <h3>DreamLog</h3>
@@ -691,7 +992,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="app-card reveal">
             <div class="icon">🛡️</div>
             <div class="badge">MVP</div>
             <h3>LoneWorker</h3>
@@ -707,7 +1008,7 @@
             </div>
           </article>
 
-          <article class="card">
+          <article class="app-card reveal">
             <div class="icon">🤖</div>
             <div class="badge">Dolazi uskoro</div>
             <h3>AI alati</h3>
@@ -726,19 +1027,57 @@
       </div>
     </section>
 
+    <section class="section highlight" id="showcase">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Showcase</div>
+          <h2>Brz pregled glavnih pravaca razvoja</h2>
+          <p>Moderniji prikaz portfolija sa fokusom na aplikacije, AI alate, sigurnost i proizvode za autore.</p>
+        </div>
+
+        <div class="showcase">
+          <article class="showcase-card reveal">
+            <div class="showcase-icon">✍️</div>
+            <h4>WriterOS</h4>
+            <p>Planiranje romana, scene, likovi i buduća AI analiza.</p>
+          </article>
+
+          <article class="showcase-card reveal">
+            <div class="showcase-icon">🚆</div>
+            <h4>RailGuard</h4>
+            <p>Bezbednosna logika za pružne prelaze i realno kretanje.</p>
+          </article>
+
+          <article class="showcase-card reveal">
+            <div class="showcase-icon">🌙</div>
+            <h4>DreamLog</h4>
+            <p>Beleženje snova, sesija i noćnih obrazaca.</p>
+          </article>
+
+          <article class="showcase-card reveal">
+            <div class="showcase-icon">🛡️</div>
+            <h4>LoneWorker</h4>
+            <p>SOS, check-in i zaštita radnika u izdvojenim uslovima.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section highlight">
       <div class="container grid value-grid">
-        <article class="card">
+        <article class="value-card reveal">
           <div class="icon">⚙️</div>
           <h3>Razvoj sa svrhom</h3>
           <p>Svaka aplikacija je osmišljena kao konkretan proizvod sa realnim tržišnim potencijalom i jasnim korisnikom.</p>
         </article>
-        <article class="card">
+
+        <article class="value-card reveal">
           <div class="icon">🧠</div>
           <h3>AI + praktična upotreba</h3>
           <p>Fokus je na alatima koji štede vreme, organizuju znanje i pomažu ljudima da rade efikasnije.</p>
         </article>
-        <article class="card">
+
+        <article class="value-card reveal">
           <div class="icon">🤝</div>
           <h3>Partnerstva i klijenti</h3>
           <p>Otvoren prostor za saradnju sa autorima, firmama, izdavačima i organizacijama kojima treba nišni softver.</p>
@@ -748,14 +1087,14 @@
 
     <section class="section" id="detalji">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal">
           <div class="section-kicker">Detalji projekata</div>
           <h2>Šta svaki projekat donosi</h2>
           <p>Stranica je pripremljena tako da kasnije lako dobije zasebne detaljne podstranice, demo prikaze, newsletter i prodajne CTA blokove.</p>
         </div>
 
         <div class="project-list">
-          <article class="project" id="writeros">
+          <article class="project reveal" id="writeros">
             <div class="project-copy">
               <div class="icon">✍️</div>
               <div class="badge">Glavni fokus</div>
@@ -776,7 +1115,7 @@
             </div>
           </article>
 
-          <article class="project" id="railguard">
+          <article class="project reveal" id="railguard">
             <div class="project-copy">
               <div class="icon">🚆</div>
               <div class="badge">Sigurnost</div>
@@ -797,7 +1136,7 @@
             </div>
           </article>
 
-          <article class="project" id="dreamlog">
+          <article class="project reveal" id="dreamlog">
             <div class="project-copy">
               <div class="icon">🌙</div>
               <div class="badge">Wellness / tracking</div>
@@ -818,7 +1157,7 @@
             </div>
           </article>
 
-          <article class="project" id="loneworker">
+          <article class="project reveal" id="loneworker">
             <div class="project-copy">
               <div class="icon">🛡️</div>
               <div class="badge">B2B potencijal</div>
@@ -839,7 +1178,7 @@
             </div>
           </article>
 
-          <article class="project" id="ai-tools">
+          <article class="project reveal" id="ai-tools">
             <div class="project-copy">
               <div class="icon">🤖</div>
               <div class="badge">SaaS portfolio</div>
@@ -865,15 +1204,16 @@
 
     <section class="section highlight" id="o-meni">
       <div class="container about-grid">
-        <article class="panel">
+        <article class="panel reveal">
           <div class="icon">👤</div>
           <div class="section-kicker">O meni</div>
-          <h2>Marjan Mitrović</h2>
+          <h3>Marjan Mitrović</h3>
           <p>Pišem knjige, razvijam aplikacije i gradim buduće AI proizvode. Ovaj portfolio okuplja projekte iz oblasti pisanja, bezbednosti, mobilnih aplikacija i softverskih alata sa jasnim potencijalom za tržište.</p>
         </article>
-        <article class="panel">
+
+        <article class="panel reveal">
           <div class="section-kicker">Vizija</div>
-          <h2>Od pojedinačnih aplikacija do jedinstvenog digitalnog ekosistema.</h2>
+          <h3>Od pojedinačnih aplikacija do jedinstvenog digitalnog ekosistema.</h3>
           <p>Cilj je da svi proizvodi budu povezani kroz zajednički identitet, jasan portfolio i profesionalan nastup prema korisnicima, partnerima i klijentima.</p>
         </article>
       </div>
@@ -881,17 +1221,20 @@
 
     <section class="section" id="kontakt">
       <div class="container contact-grid">
-        <article class="panel">
+        <article class="panel reveal">
           <div class="section-kicker">Saradnja</div>
           <h2>Otvoren za testiranje proizvoda, partnerstva i poslovne upite.</h2>
           <p>Stranica može dalje dobiti lead formu, newsletter prijavu, waitlist sistem i direktne linkove ka posebnim demo verzijama ili zasebnim projektnim sajtovima.</p>
         </article>
-        <article class="panel">
+
+        <article class="panel reveal">
           <h3>Kontakt</h3>
           <p>Za saradnju, rani pristup, pitanja ili poslovne predloge.</p>
+
           <div class="contact-box">
             <a href="mailto:marjan.posao@gmail.com">marjan.posao@gmail.com</a>
           </div>
+
           <div class="hero-actions" style="margin-top:18px;">
             <a class="btn btn-primary" href="mailto:marjan.posao@gmail.com?subject=Poslovni%20upit">Pošalji upit</a>
             <a class="btn btn-secondary" href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">GitHub portfolio</a>
@@ -906,6 +1249,7 @@
       <div>© 2026 Marjan Mitrović. Apps, books &amp; AI tools.</div>
       <div class="footer-links">
         <a href="#projekti">Projekti</a>
+        <a href="#showcase">Showcase</a>
         <a href="#o-meni">O meni</a>
         <a href="#kontakt">Kontakt</a>
       </div>
@@ -914,28 +1258,42 @@
 
   <script>
     (function () {
-      const menuBtn = document.getElementById('menuBtn');
-      const mobileMenu = document.getElementById('mobileMenu');
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-      if (!menuBtn || !mobileMenu) return;
-
-      menuBtn.addEventListener('click', function () {
-        const isOpen = mobileMenu.classList.toggle('open');
-        menuBtn.setAttribute('aria-expanded', String(isOpen));
-        menuBtn.textContent = isOpen ? '✕' : '☰';
-      });
-
-      mobileMenu.querySelectorAll('a').forEach(function (link) {
-        link.addEventListener('click', function () {
-          mobileMenu.classList.remove('open');
-          menuBtn.setAttribute('aria-expanded', 'false');
-          menuBtn.textContent = '☰';
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener("click", function () {
+          const isOpen = mobileMenu.classList.toggle("open");
+          menuBtn.setAttribute("aria-expanded", String(isOpen));
+          menuBtn.textContent = isOpen ? "✕" : "☰";
         });
+
+        mobileMenu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            mobileMenu.classList.remove("open");
+            menuBtn.setAttribute("aria-expanded", "false");
+            menuBtn.textContent = "☰";
+          });
+        });
+      }
+
+      const reveals = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      }, { threshold: 0.12 });
+
+      reveals.forEach(function (el) {
+        observer.observe(el);
       });
 
-      console.assert(document.title.length > 0, 'Title should not be empty');
-      console.assert(!!document.querySelector('meta[name="description"]'), 'Meta description is required');
-      console.assert(!!document.querySelector('meta[property="og:title"]'), 'OG title is required');
+      console.assert(document.title.length > 0, "Title should not be empty");
+      console.assert(!!document.querySelector('meta[name="description"]'), "Meta description is required");
+      console.assert(!!document.querySelector('meta[property="og:title"]'), "OG title is required");
+      console.assert(!!document.querySelector('meta[property="og:image"]'), "OG image is required");
     })();
   </script>
 </body>
