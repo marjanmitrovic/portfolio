@@ -1,0 +1,13 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marjan Mitrović",
+  "url": "https://marjanmitrovic.github.io/",
+  "email": "mailto:marjan.posao@gmail.com",
+  "jobTitle": "Writer, app developer and AI product builder",
+  "sameAs": [
+    "https://github.com/marjanmitrovic"
+  ]
+}
+</script>
