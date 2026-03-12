@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marjanmitrovic.github.io/sitemap.xml

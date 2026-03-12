@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marjan Mitrović | Aplikacije, AI alati i digitalni projekti</title>
+  <meta name="description" content="Portfolio Marjana Mitrovića: WriterOS, RailGuard, DreamLog, LoneWorker i budući AI alati za autore, bezbednost i firme." />
+  <meta name="keywords" content="Marjan Mitrović, WriterOS, RailGuard, DreamLog, LoneWorker, AI alati, aplikacije, portfolio, SaaS, GitHub Pages" />
+  <meta name="author" content="Marjan Mitrović" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sr_RS" />
+  <meta property="og:title" content="Marjan Mitrović | Aplikacije, AI alati i digitalni projekti" />
+  <meta property="og:description" content="Jedno mesto za WriterOS, RailGuard, DreamLog, LoneWorker i buduće AI proizvode." />
+  <meta property="og:url" content="https://marjanmitrovic.github.io/" />
+  <meta property="og:site_name" content="Marjan Mitrović Portfolio" />
+  <meta property="og:image" content="https://marjanmitrovic.github.io/images/og-cover.jpg" />
+  <meta property="og:image:alt" content="Portfolio aplikacija i AI alata Marjana Mitrovića" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Marjan Mitrović | Aplikacije, AI alati i digitalni projekti" />
+  <meta name="twitter:description" content="Portfolio aplikacija, knjiga i AI alata: WriterOS, RailGuard, DreamLog, LoneWorker i još projekata." />
+  <meta name="twitter:image" content="https://marjanmitrovic.github.io/images/og-cover.jpg" />
+
+  <link rel="canonical" href="https://marjanmitrovic.github.io/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Marjan Mitrović",
+    "url": "https://marjanmitrovic.github.io/",
+    "email": "mailto:marjan.posao@gmail.com",
+    "jobTitle": "Writer, app developer and AI product builder",
+    "sameAs": [
+      "https://github.com/marjanmitrovic"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #09090c;
+      --bg-soft: #12121a;
+      --card: rgba(255,255,255,0.05);
+      --card-strong: rgba(255,255,255,0.08);
+      --border: rgba(255,255,255,0.12);
+      --text: #f5f7fb;
+      --muted: #b0b7c3;
+      --muted-2: #8a91a1;
+      --accent: #ffffff;
+      --shadow: 0 24px 60px rgba(0,0,0,0.35);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.08), transparent 28%),
+        linear-gradient(180deg, #111119 0%, var(--bg) 35%, #08080b 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(16px);
+      background: rgba(9,9,12,0.75);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 46px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted-2);
+      font-size: 0.82rem;
+    }
+
+    .brand strong {
+      display: block;
+      font-size: 1rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible { color: var(--text); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .menu-btn {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 0 0 16px;
+    }
+
+    .mobile-menu.open { display: block; }
+
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      font-weight: 600;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #09090c;
+      border-color: transparent;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    h1, h2, h3 { line-height: 1.1; margin: 0; }
+
+    .hero h1 {
+      margin-top: 22px;
+      font-size: clamp(2.4rem, 6vw, 4.9rem);
+      max-width: 920px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 1.12rem;
+      color: var(--muted);
+      margin: 22px 0 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .stats {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      max-width: 800px;
+    }
+
+    .stat {
+      padding: 18px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+
+    .stat span { color: var(--muted-2); font-size: 0.95rem; }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      color: var(--muted-2);
+      font-size: 0.76rem;
+      margin-bottom: 12px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 14px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .cards {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      height: 100%;
+    }
+
+    .icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      background: var(--card-strong);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-size: 1.35rem;
+      margin-bottom: 18px;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 1.45rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px;
+    }
+
+    .features li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      color: #dfe5ef;
+      font-size: 0.96rem;
+    }
+
+    .features li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      top: -1px;
+      color: #ffffff;
+    }
+
+    .btn-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: auto;
+    }
+
+    .highlight {
+      background: rgba(255,255,255,0.03);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .value-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .project-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 20px;
+      padding: 24px;
+      border-radius: 30px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      scroll-margin-top: 100px;
+    }
+
+    .project-copy p { color: var(--muted); margin: 14px 0 0; }
+
+    .project-panel {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 22px;
+    }
+
+    .project-panel h4 {
+      margin: 0 0 14px;
+      color: var(--muted-2);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+    }
+
+    .about-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel p { color: var(--muted); }
+
+    .contact-box {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      word-break: break-word;
+    }
+
+    footer {
+      padding: 28px 0 42px;
+      border-top: 1px solid var(--border);
+      color: var(--muted-2);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    @media (max-width: 1080px) {
+      .cards,
+      .value-grid,
+      .project,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+      .menu-btn { display: inline-grid; place-items: center; }
+      .stats { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .hero { padding: 56px 0 42px; }
+      .section { padding: 56px 0; }
+      .btn-row,
+      .hero-actions {
+        grid-template-columns: 1fr;
+      }
+      .btn-row { display: grid; }
+      .container { width: min(var(--max), calc(100% - 22px)); }
+      .card,
+      .panel,
+      .project,
+      .project-panel { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Početak stranice">
+        <div class="brand-mark">MM</div>
+        <div>
+          <small>Marjan Mitrović</small>
+          <strong>Apps &amp; AI Portfolio</strong>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Glavna navigacija">
+        <a href="#projekti">Projekti</a>
+        <a href="#detalji">Detalji</a>
+        <a href="#o-meni">O meni</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn-secondary" href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn btn-primary" href="#kontakt">Saradnja</a>
+      </div>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Otvori meni" aria-expanded="false">☰</button>
+    </div>
+    <div class="container mobile-menu" id="mobileMenu">
+      <a href="#projekti">Projekti</a>
+      <a href="#detalji">Detalji</a>
+      <a href="#o-meni">O meni</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">Portfolio aplikacija, knjiga i budućih AI proizvoda</div>
+        <h1>Gradim aplikacije i AI alate koji rešavaju konkretne probleme.</h1>
+        <p>Jedno centralno mesto za moje projekte: WriterOS, RailGuard, DreamLog, LoneWorker i narednu generaciju AI alata za autore i firme.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projekti">Pogledaj projekte</a>
+          <a class="btn btn-secondary" href="mailto:marjan.posao@gmail.com?subject=Poslovni%20upit">Kontakt / saradnja</a>
+        </div>
+        <div class="stats">
+          <div class="stat">
+            <strong>5+</strong>
+            <span>projekata u razvoju</span>
+          </div>
+          <div class="stat">
+            <strong>AI + Mobile</strong>
+            <span>spoj softvera i automatizacije</span>
+          </div>
+          <div class="stat">
+            <strong>SR / EN / CZ</strong>
+            <span>višejezični pristup</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projekti">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Projekti</div>
+          <h2>Pregled svih aplikacija</h2>
+          <p>Svaki proizvod je usmeren na jasan problem, sa prostorom za monetizaciju kroz pretplatu, licence, B2B saradnju ili digitalnu prodaju.</p>
+        </div>
+
+        <div class="grid cards">
+          <article class="card">
+            <div class="icon">✍️</div>
+            <div class="badge">U razvoju</div>
+            <h3>WriterOS</h3>
+            <p>AI platforma za autore koja povezuje planiranje romana, upravljanje likovima, organizaciju scena i buduću analizu rukopisa na jednom mestu.</p>
+            <ul class="features">
+              <li>Planiranje romana</li>
+              <li>Likovi i scene</li>
+              <li>Budući AI modul</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-secondary" href="#writeros">Detalji</a>
+              <a class="btn btn-primary" href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">🚆</div>
+            <div class="badge">Aktivan projekat</div>
+            <h3>RailGuard</h3>
+            <p>Mobilna aplikacija za bezbednost na pružnim prelazima sa GPS logikom, upozorenjima i razvojem sistema za realne rizične situacije.</p>
+            <ul class="features">
+              <li>GPS upozorenja</li>
+              <li>Praćenje kretanja</li>
+              <li>Sigurnosna logika</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-secondary" href="#railguard">Detalji</a>
+              <a class="btn btn-primary" href="https://github.com/marjanmitrovic/RailGuard" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">🌙</div>
+            <div class="badge">Prototip</div>
+            <h3>DreamLog</h3>
+            <p>Aplikacija za vođenje dnevnika snova, beleženje noćnih sesija i razvoj sistema za analizu obrazaca spavanja i lucidnih iskustava.</p>
+            <ul class="features">
+              <li>Dream journal</li>
+              <li>Session tracking</li>
+              <li>Analiza obrazaca</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-secondary" href="#dreamlog">Detalji</a>
+              <a class="btn btn-primary" href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">🛡️</div>
+            <div class="badge">MVP</div>
+            <h3>LoneWorker</h3>
+            <p>Sigurnosna aplikacija za radnike koji rade sami, sa SOS funkcijom, check-in sistemom i automatskim alarmiranjem u rizičnim scenarijima.</p>
+            <ul class="features">
+              <li>SOS poziv</li>
+              <li>Check-in</li>
+              <li>Detekcija nepokretnosti</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-secondary" href="#loneworker">Detalji</a>
+              <a class="btn btn-primary" href="https://github.com/marjanmitrovic/LoneWorker" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="icon">🤖</div>
+            <div class="badge">Dolazi uskoro</div>
+            <h3>AI alati</h3>
+            <p>Novi AI SaaS alati za autore i firme: analiza rukopisa, knowledge base za poslovanje i specijalizovani asistenti za produktivnost.</p>
+            <ul class="features">
+              <li>Writer AI</li>
+              <li>Knowledge base</li>
+              <li>SaaS proizvodi</li>
+            </ul>
+            <div class="btn-row">
+              <a class="btn btn-secondary" href="#ai-tools">Detalji</a>
+              <a class="btn btn-primary" href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlight">
+      <div class="container grid value-grid">
+        <article class="card">
+          <div class="icon">⚙️</div>
+          <h3>Razvoj sa svrhom</h3>
+          <p>Svaka aplikacija je osmišljena kao konkretan proizvod sa realnim tržišnim potencijalom i jasnim korisnikom.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🧠</div>
+          <h3>AI + praktična upotreba</h3>
+          <p>Fokus je na alatima koji štede vreme, organizuju znanje i pomažu ljudima da rade efikasnije.</p>
+        </article>
+        <article class="card">
+          <div class="icon">🤝</div>
+          <h3>Partnerstva i klijenti</h3>
+          <p>Otvoren prostor za saradnju sa autorima, firmama, izdavačima i organizacijama kojima treba nišni softver.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="detalji">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-kicker">Detalji projekata</div>
+          <h2>Šta svaki projekat donosi</h2>
+          <p>Stranica je pripremljena tako da kasnije lako dobije zasebne detaljne podstranice, demo prikaze, newsletter i prodajne CTA blokove.</p>
+        </div>
+
+        <div class="project-list">
+          <article class="project" id="writeros">
+            <div class="project-copy">
+              <div class="icon">✍️</div>
+              <div class="badge">Glavni fokus</div>
+              <h3>WriterOS</h3>
+              <p>WriterOS je centralni projekat namenjen piscima i autorima koji žele da na jednom mestu planiraju roman, vode bazu likova, rasporede scene i kasnije koriste AI za analizu rukopisa i razvoj priče.</p>
+            </div>
+            <div class="project-panel">
+              <h4>Ključne vrednosti</h4>
+              <ul class="features">
+                <li>Pisanje i organizacija projekta na jednom mestu</li>
+                <li>Baza likova, poglavlja i scena</li>
+                <li>Temelj za komercijalni AI alat za autore</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="mailto:marjan.posao@gmail.com?subject=WriterOS%20-%20rani%20pristup">Rani pristup</a>
+                <a class="btn btn-secondary" href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" id="railguard">
+            <div class="project-copy">
+              <div class="icon">🚆</div>
+              <div class="badge">Sigurnost</div>
+              <h3>RailGuard</h3>
+              <p>RailGuard je mobilna bezbednosna aplikacija koja koristi lokaciju i logiku kretanja da upozori korisnika kada se približava rizičnom pružnom prelazu. Projekat je razvijan kao realno rešenje sa terenskom primenom.</p>
+            </div>
+            <div class="project-panel">
+              <h4>Ključne vrednosti</h4>
+              <ul class="features">
+                <li>GPS praćenje i upozorenja u kretanju</li>
+                <li>Fokus na bezbednosnim slučajevima upotrebe</li>
+                <li>Potencijal za infrastrukturna i B2B partnerstva</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="mailto:marjan.posao@gmail.com?subject=RailGuard%20-%20demo">Upit za demo</a>
+                <a class="btn btn-secondary" href="https://github.com/marjanmitrovic/RailGuard" target="_blank" rel="noreferrer">Repozitorijum</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" id="dreamlog">
+            <div class="project-copy">
+              <div class="icon">🌙</div>
+              <div class="badge">Wellness / tracking</div>
+              <h3>DreamLog</h3>
+              <p>DreamLog je aplikacija za zapisivanje snova i praćenje noćnih sesija, sa idejom da preraste u pametan alat za prepoznavanje obrazaca spavanja, lucidnih iskustava i lične noćne rutine.</p>
+            </div>
+            <div class="project-panel">
+              <h4>Ključne vrednosti</h4>
+              <ul class="features">
+                <li>Lični dnevnik snova i noćnih beleški</li>
+                <li>Praćenje sesija i signala tokom noći</li>
+                <li>Osnova za premium wellness alat</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="mailto:marjan.posao@gmail.com?subject=DreamLog%20-%20testiranje">Kontakt za testiranje</a>
+                <a class="btn btn-secondary" href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" id="loneworker">
+            <div class="project-copy">
+              <div class="icon">🛡️</div>
+              <div class="badge">B2B potencijal</div>
+              <h3>LoneWorker</h3>
+              <p>LoneWorker je sigurnosna aplikacija za zaposlene koji rade sami ili na izdvojenim lokacijama. Objedinjuje SOS funkciju, check-in sistem i automatsko alarmiranje kada postoji rizik ili izostanak kretanja.</p>
+            </div>
+            <div class="project-panel">
+              <h4>Ključne vrednosti</h4>
+              <ul class="features">
+                <li>SOS i hitno obaveštavanje</li>
+                <li>Check-in i sigurnosni workflow</li>
+                <li>Praktična vrednost za firme, obezbeđenje i teren</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="mailto:marjan.posao@gmail.com?subject=LoneWorker%20-%20poslovni%20upit">Poslovni upit</a>
+                <a class="btn btn-secondary" href="https://github.com/marjanmitrovic/LoneWorker" target="_blank" rel="noreferrer">Repozitorijum</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" id="ai-tools">
+            <div class="project-copy">
+              <div class="icon">🤖</div>
+              <div class="badge">SaaS portfolio</div>
+              <h3>Budući AI alati</h3>
+              <p>U ovom segmentu dolaze budući AI proizvodi za autore i firme: analiza rukopisa, AI knowledge base sistemi, asistenti za sadržaj i nišni SaaS alati za profesionalnu upotrebu.</p>
+            </div>
+            <div class="project-panel">
+              <h4>Ključne vrednosti</h4>
+              <ul class="features">
+                <li>AI knowledge base za firme</li>
+                <li>Analiza rukopisa i pomoć autorima</li>
+                <li>Automatizacija rada kroz pretplatničke modele</li>
+              </ul>
+              <div class="btn-row">
+                <a class="btn btn-primary" href="mailto:marjan.posao@gmail.com?subject=AI%20alati%20-%20interesovanje">Prijavi interesovanje</a>
+                <a class="btn btn-secondary" href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section highlight" id="o-meni">
+      <div class="container about-grid">
+        <article class="panel">
+          <div class="icon">👤</div>
+          <div class="section-kicker">O meni</div>
+          <h2>Marjan Mitrović</h2>
+          <p>Pišem knjige, razvijam aplikacije i gradim buduće AI proizvode. Ovaj portfolio okuplja projekte iz oblasti pisanja, bezbednosti, mobilnih aplikacija i softverskih alata sa jasnim potencijalom za tržište.</p>
+        </article>
+        <article class="panel">
+          <div class="section-kicker">Vizija</div>
+          <h2>Od pojedinačnih aplikacija do jedinstvenog digitalnog ekosistema.</h2>
+          <p>Cilj je da svi proizvodi budu povezani kroz zajednički identitet, jasan portfolio i profesionalan nastup prema korisnicima, partnerima i klijentima.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="kontakt">
+      <div class="container contact-grid">
+        <article class="panel">
+          <div class="section-kicker">Saradnja</div>
+          <h2>Otvoren za testiranje proizvoda, partnerstva i poslovne upite.</h2>
+          <p>Stranica može dalje dobiti lead formu, newsletter prijavu, waitlist sistem i direktne linkove ka posebnim demo verzijama ili zasebnim projektnim sajtovima.</p>
+        </article>
+        <article class="panel">
+          <h3>Kontakt</h3>
+          <p>Za saradnju, rani pristup, pitanja ili poslovne predloge.</p>
+          <div class="contact-box">
+            <a href="mailto:marjan.posao@gmail.com">marjan.posao@gmail.com</a>
+          </div>
+          <div class="hero-actions" style="margin-top:18px;">
+            <a class="btn btn-primary" href="mailto:marjan.posao@gmail.com?subject=Poslovni%20upit">Pošalji upit</a>
+            <a class="btn btn-secondary" href="https://github.com/marjanmitrovic" target="_blank" rel="noreferrer">GitHub portfolio</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Marjan Mitrović. Apps, books &amp; AI tools.</div>
+      <div class="footer-links">
+        <a href="#projekti">Projekti</a>
+        <a href="#o-meni">O meni</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+
+      if (!menuBtn || !mobileMenu) return;
+
+      menuBtn.addEventListener('click', function () {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(isOpen));
+        menuBtn.textContent = isOpen ? '✕' : '☰';
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileMenu.classList.remove('open');
+          menuBtn.setAttribute('aria-expanded', 'false');
+          menuBtn.textContent = '☰';
+        });
+      });
+
+      console.assert(document.title.length > 0, 'Title should not be empty');
+      console.assert(!!document.querySelector('meta[name="description"]'), 'Meta description is required');
+      console.assert(!!document.querySelector('meta[property="og:title"]'), 'OG title is required');
+    })();
+  </script>
+</body>
+</html>
