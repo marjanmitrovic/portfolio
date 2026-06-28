@@ -1,0 +1,52 @@
+name: Update book title translations
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-book-title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Update portfolio book title by language
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          original = s
+          sr_title = 'Novo ropstvo'
+          cz_title = 'Nové otroctví'
+          en_title = 'New ' + 'Slavery'
+
+          s = s.replace('<h3>Nové otroctví</h3>', f'<h3 data-i18n="bookTitle">{sr_title}</h3>')
+          s = s.replace('<h3 data-i18n="bookTitle">Nové otroctví</h3>', f'<h3 data-i18n="bookTitle">{sr_title}</h3>')
+          s = s.replace('bookBadge:"Knjiga",cardBookText:', f'bookBadge:"Knjiga",bookTitle:"{sr_title}",cardBookText:')
+          s = s.replace('bookBadge:"Kniha",cardBookText:', f'bookBadge:"Kniha",bookTitle:"{cz_title}",cardBookText:')
+          s = s.replace('bookBadge:"Book",cardBookText:', f'bookBadge:"Book",bookTitle:"{en_title}",cardBookText:')
+          s = s.replace('bookBadge:"Knjiga",bookTitle:"Nové otroctví",cardBookText:', f'bookBadge:"Knjiga",bookTitle:"{sr_title}",cardBookText:')
+          s = s.replace('bookBadge:"Book",bookTitle:"Nové otroctví",cardBookText:', f'bookBadge:"Book",bookTitle:"{en_title}",cardBookText:')
+
+          if s != original:
+              p.write_text(s, encoding='utf-8')
+              print('Book title translations updated.')
+          else:
+              print('No changes needed.')
+          PY
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Update book title translations"
+            git push
+          fi
