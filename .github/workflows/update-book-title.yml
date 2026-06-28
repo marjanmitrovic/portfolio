@@ -50,3 +50,5 @@ jobs:
             git commit -m "Update book title translations"
             git push
           fi
+
+# trigger: 2
