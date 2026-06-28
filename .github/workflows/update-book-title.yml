@@ -21,15 +21,16 @@ jobs:
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
           original = s
-          sr_about = 'Ja sam Marjan Mitrović, autor, developer i kreator AI alata koji živi u Pragu.'
+          sr_about = 'Ja sam Marjan Mitrović, autor, programer i kreator AI alata koji živi u Pragu.'
           cz_about = 'Jsem Marjan Mitrović, autor, vývojář a tvůrce AI nástrojů žijící v Praze.'
 
-          s = s.replace('heroEyebrow:"Autor • AI developer • founder"', 'heroEyebrow:"Autor • AI developer • osnivač"')
+          s = s.replace('heroEyebrow:"Autor • AI developer • founder"', 'heroEyebrow:"Autor • AI programer • osnivač"')
+          s = s.replace('heroEyebrow:"Autor • AI developer • osnivač"', 'heroEyebrow:"Autor • AI programer • osnivač"')
           s = s.replace('heroEyebrow:"Autor • AI vývojář • founder"', 'heroEyebrow:"Autor • AI vývojář • zakladatel"')
 
           s = s.replace('aboutLead:"Jsem Marjan Mitrović, autor, vývojář a tvůrce AI nástrojů žijící v Praze."', f'aboutLead:"{sr_about}"', 1)
-          s = s.replace('cz:{brandSub:', 'cz:{brandSub:', 1)
-          s = s.replace('aboutLead:"Ja sam Marjan Mitrović, autor, developer i kreator AI alata koji živi u Pragu.",aboutText:"Píšu knihy', f'aboutLead:"{cz_about}",aboutText:"Píšu knihy')
+          s = s.replace('aboutLead:"Ja sam Marjan Mitrović, autor, developer i kreator AI alata koji živi u Pragu."', f'aboutLead:"{sr_about}"', 1)
+          s = s.replace('aboutLead:"Ja sam Marjan Mitrović, autor, programer i kreator AI alata koji živi u Pragu.",aboutText:"Píšu knihy', f'aboutLead:"{cz_about}",aboutText:"Píšu knihy')
 
           if s != original:
               p.write_text(s, encoding='utf-8')
@@ -45,8 +46,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Fix Czech about lead translation"
+            git commit -m "Translate developer to Serbian"
             git push
           fi
 
-# trigger: 7
+# trigger: 8
