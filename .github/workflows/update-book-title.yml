@@ -1,4 +1,4 @@
-name: Update book title translations
+name: Update portfolio translations
 
 on:
   push:
@@ -40,6 +40,9 @@ jobs:
           s = s.replace('<p class="lead" data-i18n="aboutLead">Jsem Marjan Mitrović, autor, vývojář a tvůrce AI nástrojů žijící v Praze.</p>', f'<p class="lead" data-i18n="aboutLead">{sr_about}</p>')
           s = s.replace('aboutLead:"Jsem Marjan Mitrović, autor, vývojář a tvůrce AI nástrojů žijící v Praze."', f'aboutLead:"{sr_about}"', 1)
 
+          s = s.replace('heroEyebrow:"Autor • AI developer • founder"', 'heroEyebrow:"Autor • AI developer • osnivač"')
+          s = s.replace('heroEyebrow:"Autor • AI vývojář • founder"', 'heroEyebrow:"Autor • AI vývojář • zakladatel"')
+
           if s != original:
               p.write_text(s, encoding='utf-8')
               print('Portfolio translations updated.')
@@ -54,8 +57,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Translate Serbian about lead"
+            git commit -m "Translate founder label by language"
             git push
           fi
 
-# trigger: 5
+# trigger: 6
