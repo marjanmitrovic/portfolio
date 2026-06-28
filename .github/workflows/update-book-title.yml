@@ -14,7 +14,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Update portfolio book title and tags by language
+      - name: Update portfolio translations
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -24,24 +24,25 @@ jobs:
           sr_title = 'Novo ropstvo'
           cz_title = 'Nové otroctví'
           en_title = ''.join(chr(c) for c in [78,101,119,32,83,108,97,118,101,114,121])
+          sr_about = 'Ja sam Marjan Mitrović, autor, developer i kreator AI alata koji živi u Pragu.'
 
           s = s.replace('<h3>Nové otroctví</h3>', f'<h3 data-i18n="bookTitle">{sr_title}</h3>')
           s = s.replace('<h3 data-i18n="bookTitle">Nové otroctví</h3>', f'<h3 data-i18n="bookTitle">{sr_title}</h3>')
-
           s = s.replace('<span class="tag">literatura</span><span class="tag">technologie</span>', '<span class="tag" data-i18n="bookTag1">literatura</span><span class="tag" data-i18n="bookTag2">tehnologija</span>')
           s = s.replace('<span class="tag" data-i18n="bookTag1">literatura</span><span class="tag" data-i18n="bookTag2">technologie</span>', '<span class="tag" data-i18n="bookTag1">literatura</span><span class="tag" data-i18n="bookTag2">tehnologija</span>')
-
           s = s.replace('bookBadge:"Knjiga",safetyBadge:', f'bookBadge:"Knjiga",bookTitle:"{sr_title}",bookTag1:"literatura",bookTag2:"tehnologija",safetyBadge:')
           s = s.replace('bookBadge:"Kniha",safetyBadge:', f'bookBadge:"Kniha",bookTitle:"{cz_title}",bookTag1:"literatura",bookTag2:"technologie",safetyBadge:')
           s = s.replace('bookBadge:"Book",safetyBadge:', f'bookBadge:"Book",bookTitle:"{en_title}",bookTag1:"literature",bookTag2:"technology",safetyBadge:')
-
           s = s.replace('bookBadge:"Knjiga",bookTitle:"Novo ropstvo",safetyBadge:', 'bookBadge:"Knjiga",bookTitle:"Novo ropstvo",bookTag1:"literatura",bookTag2:"tehnologija",safetyBadge:')
           s = s.replace('bookBadge:"Kniha",bookTitle:"Nové otroctví",safetyBadge:', 'bookBadge:"Kniha",bookTitle:"Nové otroctví",bookTag1:"literatura",bookTag2:"technologie",safetyBadge:')
           s = s.replace(f'bookBadge:"Book",bookTitle:"{en_title}",safetyBadge:', f'bookBadge:"Book",bookTitle:"{en_title}",bookTag1:"literature",bookTag2:"technology",safetyBadge:')
 
+          s = s.replace('<p class="lead" data-i18n="aboutLead">Jsem Marjan Mitrović, autor, vývojář a tvůrce AI nástrojů žijící v Praze.</p>', f'<p class="lead" data-i18n="aboutLead">{sr_about}</p>')
+          s = s.replace('aboutLead:"Jsem Marjan Mitrović, autor, vývojář a tvůrce AI nástrojů žijící v Praze."', f'aboutLead:"{sr_about}"', 1)
+
           if s != original:
               p.write_text(s, encoding='utf-8')
-              print('Book title and tag translations updated.')
+              print('Portfolio translations updated.')
           else:
               print('No changes needed.')
           PY
@@ -53,8 +54,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Update book card tags by language"
+            git commit -m "Translate Serbian about lead"
             git push
           fi
 
-# trigger: 4
+# trigger: 5
