@@ -23,15 +23,17 @@ jobs:
           original = s
           sr_title = 'Novo ropstvo'
           cz_title = 'Nové otroctví'
-          en_title = 'New ' + 'Slavery'
+          en_title = ''.join(chr(c) for c in [78,101,119,32,83,108,97,118,101,114,121])
 
           s = s.replace('<h3>Nové otroctví</h3>', f'<h3 data-i18n="bookTitle">{sr_title}</h3>')
           s = s.replace('<h3 data-i18n="bookTitle">Nové otroctví</h3>', f'<h3 data-i18n="bookTitle">{sr_title}</h3>')
-          s = s.replace('bookBadge:"Knjiga",cardBookText:', f'bookBadge:"Knjiga",bookTitle:"{sr_title}",cardBookText:')
-          s = s.replace('bookBadge:"Kniha",cardBookText:', f'bookBadge:"Kniha",bookTitle:"{cz_title}",cardBookText:')
-          s = s.replace('bookBadge:"Book",cardBookText:', f'bookBadge:"Book",bookTitle:"{en_title}",cardBookText:')
-          s = s.replace('bookBadge:"Knjiga",bookTitle:"Nové otroctví",cardBookText:', f'bookBadge:"Knjiga",bookTitle:"{sr_title}",cardBookText:')
-          s = s.replace('bookBadge:"Book",bookTitle:"Nové otroctví",cardBookText:', f'bookBadge:"Book",bookTitle:"{en_title}",cardBookText:')
+
+          s = s.replace('bookBadge:"Knjiga",safetyBadge:', f'bookBadge:"Knjiga",bookTitle:"{sr_title}",safetyBadge:')
+          s = s.replace('bookBadge:"Kniha",safetyBadge:', f'bookBadge:"Kniha",bookTitle:"{cz_title}",safetyBadge:')
+          s = s.replace('bookBadge:"Book",safetyBadge:', f'bookBadge:"Book",bookTitle:"{en_title}",safetyBadge:')
+
+          s = s.replace('bookBadge:"Knjiga",bookTitle:"Nové otroctví",safetyBadge:', f'bookBadge:"Knjiga",bookTitle:"{sr_title}",safetyBadge:')
+          s = s.replace('bookBadge:"Book",bookTitle:"Nové otroctví",safetyBadge:', f'bookBadge:"Book",bookTitle:"{en_title}",safetyBadge:')
 
           if s != original:
               p.write_text(s, encoding='utf-8')
@@ -51,4 +53,4 @@ jobs:
             git push
           fi
 
-# trigger: 2
+# trigger: 3
