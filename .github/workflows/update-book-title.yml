@@ -14,34 +14,43 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Update portfolio translations and meta tags
+      - name: Update portfolio translations and preview meta
         run: |
           python - <<'PY'
           from pathlib import Path
-          import re
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
           original = s
-          sr_about = 'Ja sam Marjan Mitrović, autor, programer i kreator AI alata koji živi u Pragu.'
-          cz_about = 'Jsem Marjan Mitrović, autor, vývojář a tvůrce AI nástrojů žijící v Praze.'
-
-          s = s.replace('heroEyebrow:"Autor • AI developer • founder"', 'heroEyebrow:"Autor • AI programer • osnivač"')
-          s = s.replace('heroEyebrow:"Autor • AI developer • osnivač"', 'heroEyebrow:"Autor • AI programer • osnivač"')
-          s = s.replace('heroEyebrow:"Autor • AI vývojář • founder"', 'heroEyebrow:"Autor • AI vývojář • zakladatel"')
-
-          s = s.replace('aboutLead:"Jsem Marjan Mitrović, autor, vývojář a tvůrce AI nástrojů žijící v Praze."', f'aboutLead:"{sr_about}"', 1)
-          s = s.replace('aboutLead:"Ja sam Marjan Mitrović, autor, developer i kreator AI alata koji živi u Pragu."', f'aboutLead:"{sr_about}"', 1)
-          s = s.replace('aboutLead:"Ja sam Marjan Mitrović, autor, programer i kreator AI alata koji živi u Pragu.",aboutText:"Píšu knihy', f'aboutLead:"{cz_about}",aboutText:"Píšu knihy')
-
-          meta = '''\n  <!-- Facebook / social preview -->\n  <meta property="og:type" content="website" />\n  <meta property="og:url" content="https://marjanmitrovic.github.io/portfolio/" />\n  <meta property="og:title" content="Marjan Mitrović | Apps, Books & AI Tools" />\n  <meta property="og:description" content="Central portfolio of Marjan Mitrović: applications, books, AI tools and digital products." />\n  <meta property="og:image" content="https://marjanmitrovic.github.io/portfolio/images/og-cover.jpg" />\n  <meta property="og:image:secure_url" content="https://marjanmitrovic.github.io/portfolio/images/og-cover.jpg" />\n  <meta property="og:image:type" content="image/jpeg" />\n  <meta property="og:image:width" content="1200" />\n  <meta property="og:image:height" content="630" />\n  <meta property="og:site_name" content="Marjan Mitrović Portfolio" />\n  <meta name="twitter:card" content="summary_large_image" />\n  <meta name="twitter:title" content="Marjan Mitrović | Apps, Books & AI Tools" />\n  <meta name="twitter:description" content="Applications, books, AI tools and digital products by Marjan Mitrović." />\n  <meta name="twitter:image" content="https://marjanmitrovic.github.io/portfolio/images/og-cover.jpg" />\n'''
-          s = re.sub(r'\n\s*<!-- Facebook / social preview -->.*?(?=\n\s*<meta name="author")', '\n', s, flags=re.S)
-          marker = '  <meta name="author" content="Marjan Mitrović" />'
-          if marker in s and 'og:url" content="https://marjanmitrovic.github.io/portfolio/"' not in s:
-              s = s.replace(marker, meta + '  <meta name="author" content="Marjan Mitrović" />')
-
+          base = 'https:' + '//marjanmitrovic.github.io/portfolio/'
+          img = base + 'images/og-cover.jpg'
+          rows = [
+            ('property','og:title','Marjan Mitrovic | Portfolio'),
+            ('property','og:description','Apps, books, AI tools and digital products by Marjan Mitrovic.'),
+            ('property','og:type','website'),
+            ('property','og:url',base),
+            ('property','og:site_name','Marjan Mitrovic Portfolio'),
+            ('property','og:image',img),
+            ('property','og:image:width','1200'),
+            ('property','og:image:height','630'),
+            ('name','twitter:card','summary_large_image'),
+            ('name','twitter:title','Marjan Mitrovic | Portfolio'),
+            ('name','twitter:description','Apps, books, AI tools and digital products by Marjan Mitrovic.'),
+            ('name','twitter:image',img),
+          ]
+          meta = '\n'.join([f'  <meta {a}="{b}" content="{c}" />' for a,b,c in rows])
+          start = s.find('  <meta property="og:title"')
+          if start == -1:
+              start = s.find('  <meta name="twitter:card"')
+          end = s.find('  <link rel="canonical"')
+          if end == -1:
+              end = s.find('  <link rel="preconnect"')
+          if start != -1 and end != -1 and start < end:
+              s = s[:start] + meta + '\n' + s[end:]
+          elif end != -1:
+              s = s[:end] + meta + '\n' + s[end:]
           if s != original:
               p.write_text(s, encoding='utf-8')
-              print('Portfolio translations and meta tags updated.')
+              print('Portfolio preview meta updated.')
           else:
               print('No changes needed.')
           PY
@@ -53,8 +62,8 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Add Facebook preview meta tags to portfolio"
+            git commit -m "Add portfolio preview meta tags"
             git push
           fi
 
-# trigger: 9
+# trigger: meta-portfolio-2
